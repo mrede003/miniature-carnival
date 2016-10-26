@@ -1,6 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 public class Conversion {
@@ -14,7 +15,7 @@ public class Conversion {
 	{
 		private final String title="Conversion!";
 		private final String prompt="Enter Temp";
-		private final String ct="Converted Temp:";
+		private final String ct="Converted Temp: ";
 		private final String c="FIRsdfd" +
 				"";
 		
@@ -34,21 +35,32 @@ public class Conversion {
 			textField=new JTextField("",15);
 			row1.add(jL);
 			row1.add(textField);
-						
+				
 			row2=new JPanel();
 			jL2=new JLabel(ct);
 			row2.add(jL2);
 			
+			Action action= new AbstractAction()
+			{
+				public void actionPerformed(ActionEvent e)
+				{
+					try {
+					    jL2.setText(ct+String.valueOf(convert(Integer.parseInt(textField.getText()))));
+					  } catch (NumberFormatException a) {
+					    jL2.setText("INVALID DATA");
+					  }
+				}
+			};
+			textField.addActionListener(action);
 			add(row1,BorderLayout.NORTH);
 			add(row2,BorderLayout.CENTER);
 			pack();
 			setVisible(true);
 			setTitle(title);
-			
 		}
 		
 	}
-	public double convert(double n)
+	public double convert(int n)
 	{
 		return (5.0/9.0)*(n-32);
 	}
