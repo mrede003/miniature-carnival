@@ -11,7 +11,7 @@ public class Conversion {
 		private final String title="Conversion!";
 		private final String prompt="Enter Temp";
 		private final String ct="Converted Temp:";
-		private final String c="FIRST GIT PROJECT" +
+		private final String c="FIRsdfd" +
 				"";
 		
 		private JPanel jP;
