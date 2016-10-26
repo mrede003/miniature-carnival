@@ -1,3 +1,7 @@
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
 import javax.swing.*;
 public class Conversion {
 	public static void main(String args[])
@@ -14,14 +18,26 @@ public class Conversion {
 		private final String c="FIRsdfd" +
 				"";
 		
-		private JPanel jP;
+		private JPanel row1;
+		private JPanel row2;
+		private JPanel row3;
 		private JLabel jL;
 		private JLabel jL2;
+		private JTextField textField;
 		private JButton button;
 		
 		public GWindow()
 		{
 			setSize(400,400);
+			row1=new JPanel();
+			row1.setMinimumSize(new Dimension(400,100));
+			jL=new JLabel(prompt);
+			textField=new JTextField("",20);
+			
+			row1.add(jL);
+			row1.add(textField);
+			add(row1);
+			
 			setVisible(true);
 			setTitle(title);
 			
