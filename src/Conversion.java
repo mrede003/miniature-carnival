@@ -30,14 +30,18 @@ public class Conversion {
 		{
 			setSize(400,400);
 			row1=new JPanel();
-			row1.setMinimumSize(new Dimension(400,100));
 			jL=new JLabel(prompt);
-			textField=new JTextField("",20);
-			
+			textField=new JTextField("",15);
 			row1.add(jL);
 			row1.add(textField);
-			add(row1);
+						
+			row2=new JPanel();
+			jL2=new JLabel(ct);
+			row2.add(jL2);
 			
+			add(row1,BorderLayout.NORTH);
+			add(row2,BorderLayout.CENTER);
+			pack();
 			setVisible(true);
 			setTitle(title);
 			
